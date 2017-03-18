@@ -1,0 +1,25 @@
+apply from: 'buildsystem/dependencies.gradle'
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.2.3'
+        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
+        classpath 'me.tatarka:gradle-retrolambda:3.2.5'
+    }
+}
+
+allprojects {
+    ext {
+        androidApplicationId = 'com.nosmurf.androidbaseproject'
+        androidVersionCode = 1
+        androidVersionName = "0.1"
+        testInstrumentationRunner = "android.support.test.runner.AndroidJUnitRunner"
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

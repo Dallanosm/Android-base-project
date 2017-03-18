@@ -1,0 +1,76 @@
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
+
+ext {
+    //Android
+    androidBuildToolsVersion = "24.0.1"
+    androidMinSdkVersion = 21
+    androidTargetSdkVersion = 24
+    androidCompileSdkVersion = 24
+
+    //Android Libs
+    appcompatVersion = '24.2.0'
+
+    //Libraries
+    daggerVersion = '2.7'
+    rxJavaVersion = '1.2.2'
+    rxAndroidVersion = '1.2.1'
+    javaxInjectVersion = '1'
+
+    //RetroLambda
+    retroLambda = 'me.tatarka.retrolambda'
+
+    //Test
+    espressoVersion = '2.0'
+    testingSupportLibVersion = '0.1'
+    jUnitVersion = '4.12'
+    mockitoVersion = '2.2.7'
+    assertJVersion = '3.5.2'
+
+    appDependencies = [
+            support       : "com.android.support:support-v13:${appcompatVersion}",
+            appcompat     : "com.android.support:appcompat-v7:${appcompatVersion}",
+            design        : "com.android.support:design:${appcompatVersion}",
+            daggerCompiler: "com.google.dagger:dagger-compiler:${daggerVersion}",
+            dagger        : "com.google.dagger:dagger:${daggerVersion}",
+            rxJava        : "io.reactivex:rxjava:${rxJavaVersion}",
+            rxAndroid     : "io.reactivex:rxandroid:${rxAndroidVersion}",
+            retroLambda   : "${retroLambda}"
+    ]
+
+    appTestDependencies = [
+            junit            : "junit:junit:${jUnitVersion}",
+            espresso         : "com.android.support.test.espresso:espresso-core:${espressoVersion}",
+            testingSupportLib: "com.android.support.test:testing-support-lib:${testingSupportLibVersion}"
+    ]
+
+    domainDependencies = [
+            rxJava     : "io.reactivex:rxjava:${rxJavaVersion}",
+            javaxInject    : "javax.inject:javax.inject:${javaxInjectVersion}",
+            retroLambda: "${retroLambda}"
+    ]
+
+    domainTestDependencies = [
+            junit  : "junit:junit:${jUnitVersion}",
+            mockito: "org.mockito:mockito-core:${mockitoVersion}"
+    ]
+
+    dataDependencies = [
+            appcompat  : "com.android.support:appcompat-v7:${appcompatVersion}",
+            rxJava     : "io.reactivex:rxjava:${rxJavaVersion}",
+            retroLambda: "${retroLambda}",
+    ]
+
+    dataTestDependencies = [
+            junit            : "junit:junit:${jUnitVersion}",
+            assertj          : "org.assertj:assertj-core:${assertJVersion}",
+            mockito          : "org.mockito:mockito-core:${mockitoVersion}",
+            testingSupportLib: "com.android.support.test:testing-support-lib:${testingSupportLibVersion}"
+
+    ]
+
+
+}
